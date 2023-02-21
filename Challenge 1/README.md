@@ -34,6 +34,10 @@ Ambas señales se visualizarán utilizando rqt_plot, mientras que las diferentes
 Finalmente, se generará un archivo de lanzamiento (launch file) para ejecutar ambos nodos, terminales y rqt_plot al mismo tiempo.
 
 ## Introducción
+La robótica es la rama de la ingeniería mecánica, electrónica e informática que se especializa en el diseño y construcción de robots que realizan trabajos, generalmente en la sustitución de la mano de obra humana.
+La evolución de la robótica se ha visto desarrollada en los últimos años, sobre todo con la automatización y la industria 4.0, debido a que genera beneficios económicos significativos.
+Es por esto que el aprendizaje con la herramienta ROS es fundamental para nuestra carrera.
+
 ## Solución del problema
 
 ### Signal Generator.py
