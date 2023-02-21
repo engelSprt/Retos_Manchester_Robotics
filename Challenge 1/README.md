@@ -28,10 +28,16 @@ En esta práctica específicamente se aplican conceptos como:
 
 
 ## Objetivos
-El primer nodo que se crea actuará como un simple generador de señales, en este caso generará una señal sinusoidal. 
-El segundo nodo tendrá la tarea de “procesar”, tomará la señal generada por el nodo anterior y la modificará, para generar una señal procesada.
-Ambas señales se visualizarán utilizando rqt_plot, mientras que las diferentes terminales mostrarán la información de las señales generadas 
-Finalmente, se generará un archivo de lanzamiento (launch file) para ejecutar ambos nodos, terminales y rqt_plot al mismo tiempo.
+Crear dos nodos que se comuniquen a traves de 2 topicos para compartir informacion.  
+  
+El primer nodo que se crea actuará como un simple generador de señales, en este caso generará una señal sinusoidal.   
+  
+El segundo nodo tendrá la tarea de “procesar”, tomará la señal generada por el nodo anterior y la modificará, para generar una señal procesada.  
+  
+Ambas señales se visualizarán utilizando rqt_plot, mientras que las diferentes terminales mostrarán la información de las señales generadas   
+  
+Finalmente, se generará un archivo de lanzamiento (launch file) para ejecutar ambos nodos, terminales y rqt_plot al mismo tiempo.  
+  
 
 ## Introducción
 La robótica es la rama de la ingeniería mecánica, electrónica e informática que se especializa en el diseño y construcción de robots que realizan trabajos, generalmente en la sustitución de la mano de obra humana.
