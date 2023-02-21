@@ -133,10 +133,6 @@ if __name__=='__main__':
 </p>
 
 
-`````python
-#Aqui va el codigo
-`````
-
 ## Conclusiones
 
 
@@ -151,10 +147,4 @@ if __name__=='__main__':
 
 
 
-              	
-
-		
-
-
-
-
+           
