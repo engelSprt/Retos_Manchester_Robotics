@@ -20,6 +20,7 @@
 ## Resumen
 
 En el reto de esta primera semana, ponemos en práctica los conceptos aprendidos sobre la tarea más sencilla que se puede realizar en ROS, la comunicación entre dos nodos. 
+
 En esta práctica específicamente se aplican conceptos como:
 * Creación de nodos
 * Comunicación entre nodos
@@ -29,20 +30,30 @@ En esta práctica específicamente se aplican conceptos como:
 
 ## Objetivos
 Crear dos nodos que se comuniquen a traves de 2 topicos para compartir informacion.  
+
   
-El primer nodo que se crea actuará como un simple generador de señales, en este caso generará una señal sinusoidal.   
+El primer nodo que se crea actuará como un simple generador de señales, en este caso generará una señal sinusoidal.  
+
   
 El segundo nodo tendrá la tarea de “procesar”, tomará la señal generada por el nodo anterior y la modificará, para generar una señal procesada.  
+
   
 Ambas señales se visualizarán utilizando rqt_plot, mientras que las diferentes terminales mostrarán la información de las señales generadas   
+
   
 Finalmente, se generará un archivo de lanzamiento (launch file) para ejecutar ambos nodos, terminales y rqt_plot al mismo tiempo.  
   
 
 ## Introducción
 La robótica es la rama de la ingeniería mecánica, electrónica e informática que se especializa en el diseño y construcción de robots que realizan trabajos, generalmente en la sustitución de la mano de obra humana.
+
 La evolución de la robótica se ha visto desarrollada en los últimos años, sobre todo con la automatización y la industria 4.0, debido a que genera beneficios económicos significativos.
+
 Es por esto que el aprendizaje con la herramienta ROS es fundamental para nuestra carrera.
+
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%201/Imagenes/Mapa%20Mental%20Gr%C3%A1fico%20Ideas%20Minimalista%20Beige.png" />
+</p>
 
 ## Solución del problema
 Para la solución de este reto se cuentan con dos archivos codificados en lenguaje Python, llamados: signal_generator y process. Se comenzará por describir la funcionalidad de cada uno de ellos en el siguiente apartado:
