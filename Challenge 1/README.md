@@ -135,6 +135,8 @@ if __name__=='__main__':
 
 ## Conclusiones
 
+Consideramos que esta primera práctica nos ayudó a terminar de comprender cómo funcionan las herramientas básicas de ROS, las cuales nos serán útiles para desarrollar los futuros retos del curso. Pudimos entender y aplicar los conceptos aprendidos en la primera semana para resolver un reto planteado por el socio formador, que en este caso fue la comunicación entre dos nodos para modificar una función sin(x) y desplegar los resultados.
+
 
 
   
