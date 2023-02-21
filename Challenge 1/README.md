@@ -36,6 +36,35 @@ Finalmente, se generará un archivo de lanzamiento (launch file) para ejecutar a
 ## Introducción
 ## Solución del problema
 ## Resultados
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%201/Imagenes/senoidal.png" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%201/Imagenes/cambio_fase.png" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%201/Imagenes/graph.png" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%201/Imagenes/challenge1.png" />
+</p>
+
+`````python
+#Aqui va el codigo
+`````
+
+`````python
+#Aqui va el codigo
+`````
+
+
+`````python
+#Aqui va el codigo
+`````
+
 ## Concluciones
 
 
