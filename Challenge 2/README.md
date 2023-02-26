@@ -22,7 +22,9 @@
 Nuevamente ponemos en práctica los conceptos de las sesiones y seguimos viendo la comunicación entre nodos pero con más de complejidad. 
 
 Un nodo simulará un sistema de primer orden, que será la aproximación a un motor de CC.
+
 Otro nodo se encargará de ser el controlador de motor.
+
 La entrada y la salida serán mensajes personalizados creados específicamente para este sistema, dichos mensajes se usarán para comunicarse con el sistema.
 
 Para este reto se empelearán los siguientes elementos aprendidos en la semana del material de autoestudio brindado por MCR2:
@@ -38,7 +40,7 @@ El reto de esta semana esta destinado a repasar los conceptos introducidos en la
 * Consiste en crear un controlador para un sistema simple de primer orden en ROS.
 * El sistema representa el comportamiento dinámico de un motor DC.
 * El controlador será un “PID” (Proporcional Integral Derivativo).
-* Al final se graficarán los resultados empleando rqt_graph y rqt_plot.
+* Al final se graficarán los resultados empleando rqt_graph y rqt_plot con un archivo.launch previamente creado.
   
 
 ## Introducción
@@ -48,6 +50,12 @@ El reto de esta semana esta destinado a repasar los conceptos introducidos en la
 ## Resultados
 
 ## Conclusiones
+
+Este segundo reto sin duda fue más desafiante y un gran salto de complejidad en comparación del reto anterior, sin embargo, pudimos aplicar el material de autoestudio
+a la solución de una situación problema de esta naturaleza, el cual fue desarrollar un controlador PID para un sistema de primer orden y graficar los resultados. 
+Las cuatro actividades de autoestudio de esta semana fueron de gran ayuda para la resolución del reto, ya que nos permitió entender el uso de ROS namespaces, 
+ROS parameter files y ROS custom messages al aplicarlos a una actividad que previamente habíamos realizado. La única mejora que consideramos es haber tenido más 
+conocimientos y prácticas previas 
 
 Consideramos que esta primera práctica nos ayudó a terminar de comprender cómo funcionan las herramientas básicas de ROS, las cuales nos serán útiles para desarrollar los futuros retos del curso. Pudimos entender y aplicar los conceptos aprendidos en la primera semana para resolver un reto planteado por el socio formador, que en este caso fue la comunicación entre dos nodos para modificar una función sin(x) y desplegar los resultados.
 
