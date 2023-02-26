@@ -55,9 +55,6 @@ Este segundo reto sin duda fue más desafiante y un gran salto de complejidad en
 a la solución de una situación problema de esta naturaleza, el cual fue desarrollar un controlador PID para un sistema de primer orden y graficar los resultados. 
 Las cuatro actividades de autoestudio de esta semana fueron de gran ayuda para la resolución del reto, ya que nos permitió entender el uso de ROS namespaces, 
 ROS parameter files y ROS custom messages al aplicarlos a una actividad que previamente habíamos realizado. La única mejora que consideramos es haber tenido más 
-conocimientos y prácticas previas 
-
-Consideramos que esta primera práctica nos ayudó a terminar de comprender cómo funcionan las herramientas básicas de ROS, las cuales nos serán útiles para desarrollar los futuros retos del curso. Pudimos entender y aplicar los conceptos aprendidos en la primera semana para resolver un reto planteado por el socio formador, que en este caso fue la comunicación entre dos nodos para modificar una función sin(x) y desplegar los resultados.
-
-
+conocimientos y prácticas previas sobre diseñar controladores PID, debido a que si fue un gram desafío diseñarlo en python sin tener mucho conocimiento acerca de ello.
+Por otro lado, las nuevas herramientas de ROS que empleamos en este reto, fue una gran aportación al curso y a  nuestros aprendizajes de la unidad de formación.
 
