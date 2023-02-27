@@ -46,9 +46,13 @@ El reto de esta semana esta destinado a repasar los conceptos introducidos en la
 ## Introducción
 La robótica es la rama de la ingeniería mecánica, electrónica e informática que se especializa en el diseño y construcción de robots que realizan trabajos, generalmente en la sustitución de la mano de obra humana.
 
-La evolución de la robótica se ha visto desarrollada en los últimos años, sobre todo con la automatización y la industria 4.0, debido a que genera beneficios económicos significativos.
+La evolución de la robótica se ha visto desarrollada en los últimos años, sobre todo con la automatización y la industria 4.0, debido a que genera beneficios económicos significativos, por lo que manejar la herramienta R.O.S. es una necesidad de nuestra carrera profesional.
 
-Continuando con el aprendizaje de las herramientas de ROS
+Continuando con el aprendizaje de las herramientas de ROS tenemos los siguientes elementos importantes:
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%202/images/2_ROS_Practicalities..png" />
+</p>
+
 ## Solución del problema
 Para la solución de este reto se cuentan con tres archivos codificados en lenguaje Python, llamados: system, controller y set_point. Se comenzará por describir la
 funcionalidad de cada uno de ellos en el siguiente apartado:
