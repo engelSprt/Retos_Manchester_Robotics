@@ -76,7 +76,7 @@ ejecutar todos los nodos. Se comenzará por describir la funcionalidad de cada u
 `````
 
 
-### challenge2.launch
+### motor_control.launch
 
 `````
 
