@@ -54,10 +54,41 @@ Continuando con el aprendizaje de las herramientas de ROS tenemos los siguientes
 </p>
 
 ## Solución del problema
-Para la solución de este reto se cuentan con tres archivos codificados en lenguaje Python, llamados: system, controller y set_point. Se comenzará por describir la
-funcionalidad de cada uno de ellos en el siguiente apartado:
+Para la solución de este reto se cuentan con tres archivos codificados en lenguaje Python, llamados: system, controller y set_point. Además del archivo.launch para 
+ejecutar todos los nodos. Se comenzará por describir la funcionalidad de cada uno de ellos en el siguiente apartado:
+
+### System.py
+
+`````python
+
+`````
+
+### Controller.py
+
+`````python
+
+`````
+
+### Set_point.py
+
+`````python
+
+`````
+
+
+### challenge2.launch
+
+`````
+
+`````
 
 ## Resultados
+
+**<p align="center"> Representación de cada uno de los nodos y tópicos utilizando el comando rqt_graph</p>**
+
+**<p align="center"> Graficación de la respuesta del sistema con el controlador junto al set_point utilizando el comando de rqt_plot</p>**
+
+**<p align="center"> Datos mostrados en la consola</p>**
 
 ## Conclusiones
 
