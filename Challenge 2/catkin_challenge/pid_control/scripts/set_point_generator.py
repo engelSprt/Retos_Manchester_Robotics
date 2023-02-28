@@ -12,7 +12,6 @@ def stop():
  #Setup the stop message (can be the same as the control message)
   print("Stopping")
 
-
 if __name__=='__main__':
     #Initialise and Setup node
     rospy.init_node("Set_Point_Generator")
@@ -25,15 +24,17 @@ if __name__=='__main__':
 
     print("The Set Point Generator is Running")
 
-    input = rospy.get_param("/input")
-    time = rospy.get_param("/time")
+    input = rospy.get_param("/input",20)
 
     #Run the node
     while not rospy.is_shutdown():
-        #time= rospy.get_time()
 
-        signal_pub.publish(input,time)
-        #signal_pub.publish(time)
-        #signal_pub.publish(set_point)
+        ini_input = set_point()
+        ini_tiempo = rospy.get_time()
+
+        ini_input.input = input
+        ini_input.time = rospy.get_time()
+
+        signal_pub.publish(ini_input)
 
         rate.sleep()
