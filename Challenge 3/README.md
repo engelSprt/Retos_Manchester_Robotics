@@ -1,4 +1,4 @@
-# CHALLENGE 2
+# CHALLENGE 3
 
 <p align="center">
   <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%201/Imagenes/tecnologico-de-monterrey-blue.png" />
@@ -19,16 +19,17 @@
 
 ## Resumen
 
-Esta semana se estudia el rosserial, una herramienta con el propósito de estandarizar la comunicación entre las computadoras y el hardware robótico.
+Esta semana se estudia rosserial, una herramienta con el propósito de estandarizar la comunicación entre las computadoras y el hardware robótico.
 Rosserial permite seguir practicando con "topics", "services" y "loggin features" de ROS.
 
 Para lograr el objetivo de esta práctica se investigará acerca la señal PWM y como se aplica para lograr regular un motor con encoder.
 
 Esta páctica de ROS que aplica los conceptos de las sesiones anteriores requiere usar el IDE de arduino, por lo que andemás de descargarlo en Ubuntu e 
-instalar las librería de ROS, recordaremos la codificación de este lenguaje de programación y su utilidad con ROS. 
+instalar las librería de ROS, investigaremos la codificación de este lenguaje de programación y su utilidad con ROS. 
 
 ## Objetivos
-Este desafío está destinado a entender el PWM en un motor DC con ROS y arduino.
+
+Este desafío está destinado a entender el envió de una señal PWM en un motor DC utilizando ROS y arduino.
 
 • La actividad consiste en crear nodos para regular la
 velocidad del motor.
@@ -43,18 +44,15 @@ microcontrolador (arduino) y un controlador de motor (puente h - motor driver).
 • El controlador del motor genera la potencia necesaria para el motor DC.
 
 ## Introducción
-La robótica es la rama de la ingeniería mecánica, electrónica e informática que se especializa en el diseño y construcción de robots que realizan trabajos, generalmente en la sustitución de la mano de obra humana.
 
-La evolución de la robótica se ha visto desarrollada en los últimos años, sobre todo con la automatización y la industria 4.0, debido a que genera beneficios económicos significativos, por lo que manejar la herramienta R.O.S. es una necesidad de nuestra carrera profesional.
-
-Continuando con el aprendizaje de las herramientas de ROS tenemos los siguientes elementos importantes:
 <p align="center">
   <img src=" " />
 </p>
 
 ## Solución del problema
-Para la solución de este reto se cuentan con un archivo codificado en lenguaje arduino, llamado: .ino. Además del 
-archivo.launch para ejecutar los nodos. 
+
+Para la solución de este reto se cuenta con un archivo codificado en lenguaje arduino, llamado: .ino. Además del archivo.launch para la ejecuación. 
+
 A continuación se describe la funcionalidad:
 
 ### .ino
@@ -65,21 +63,36 @@ A continuación se describe la funcionalidad:
 
 
 
-
 ### motor_control.launch
 
 `````
 
 `````
 
-## Resultados
+## Resultados  
 
 **<p align="center"> Ejecución de ROS en el ordenador</p>**
 
-**<p align="center"> Video de demosración</p>**
+<p align="center">
+  <img src=" " />
+</p>
 
-**<p align="center"> Datos mostrados en la consola</p>**
+<p align="center">
+  <img src=" " />
+</p>
+
+Se envía el parametro de PWM (0-255) a través de la terminar mientras se ejecuta roscore.
+
+**<p align="center"> Video de demostración</p>**
+
+
+En este video se puede ver como cambia la velocidad del motor a través del PWM que se envía desde el ordenador.
+
 
 ## Conclusiones
 
-
+Este reto fue bastante interesante por la manera en que se comunica un ordenador con ROS y un hardware externo. Además de que será muy útil para darle 
+continuidad a las siguientes etapas del curso y unir todas las prácticas en el reto final planeado por MCR2. Consideramos que pudimos lograr el propósito 
+de este mini challenge. Para enviar una simple señal de PWM desde arduino tuvimos que recordar la manera de programar en este IDE, lo cual es muy similar 
+a programar en C. En adición investgamos la manera en que se usaba la librería de ROS para la comunicación, en especial entendimos como 
+funciona publisher y subscriber en este entorno de programación.
