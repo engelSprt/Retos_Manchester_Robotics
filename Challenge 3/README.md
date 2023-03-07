@@ -51,21 +51,13 @@ microcontrolador (arduino) y un controlador de motor (puente h - motor driver).
 
 ## Solución del problema
 
-Para la solución de este reto se cuenta con un archivo codificado en lenguaje arduino, llamado: .ino. Además del archivo.launch para la ejecuación. 
+Para la solución de este reto se cuenta con un archivo codificado en lenguaje arduino, llamado: .ino.
 
 A continuación se describe la funcionalidad:
 
 ### .ino
 
 `````c
-
-`````
-
-
-
-### motor_control.launch
-
-`````
 
 `````
 
