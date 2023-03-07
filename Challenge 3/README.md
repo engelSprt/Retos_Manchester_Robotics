@@ -71,23 +71,12 @@ A continuación se describe la funcionalidad:
 
 ## Resultados  
 
-**<p align="center"> Ejecución de ROS en el ordenador</p>**
-
-<p align="center">
-  <img src=" " />
-</p>
-
-<p align="center">
-  <img src=" " />
-</p>
-
-Se envía el parametro de PWM (0-255) a través de la terminar mientras se ejecuta roscore.
-
-**<p align="center"> Video de demostración</p>**
+**<p align="center"> Video de demostración con la explicación de la ejecución</p>**
 
 https://drive.google.com/file/d/1HZ1CPLM-PxY7eF_v2G-9Eb3xtx01ICvY/view?usp=sharing
 
-En este video se puede ver como cambia la velocidad del motor a través del PWM que se envía desde el ordenador.
+En este video se puede ver como cambia la velocidad del motor a través del PWM que se envía desde el ordenador, se envía el parametro de PWM a través de 
+la terminar mientras se ejecuta roscore..
 
 
 ## Conclusiones
