@@ -11,12 +11,12 @@ class SimpleSystem:
   def __init__(self):
 
     #Set the parameters of the system
-    self.sample_time = rospy.get_param("/system_sample_time")
-    self.max_speed = rospy.get_param("/system_max_speed")
-    self.min_input = rospy.get_param("/system_min_input")
-    self.param_K = rospy.get_param("/system_param_K")
-    self.param_T = rospy.get_param("/system_param_T")
-    self.init_conditions = rospy.get_param("/system_initial_cond")
+    self.sample_time = rospy.get_param("/system_sample_time",0.002)
+    self.max_speed = rospy.get_param("/system_max_speed",13)
+    self.min_input = rospy.get_param("/system_min_input",0.05)
+    self.param_K = rospy.get_param("/system_param_K",13.1)
+    self.param_T = rospy.get_param("/system_param_T",0.04)
+    self.init_conditions = rospy.get_param("/system_initial_cond",0.0)
 
     # Setup Variables to be used
     self.first = True
@@ -117,7 +117,7 @@ if __name__=='__main__':
  System = SimpleSystem()
 
  # Configure the Node
- loop_rate = rospy.Rate(rospy.get_param("/system_node_rate",100))
+ loop_rate = rospy.Rate(rospy.get_param("/system_node_rate",1000))
  rospy.on_shutdown(System.stop)
 
  print("The Motor is Running")

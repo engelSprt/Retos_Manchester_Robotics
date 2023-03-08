@@ -4,35 +4,46 @@ import numpy as np
 from pid_control.msg import motor_output
 from pid_control.msg import motor_input
 from pid_control.msg import set_point
+#from std_msgs.msg import Float32
+#rom std_msgs.msg import Float64
 
 #Setup parameters, vriables and callback functions here (if required)
-kp = rospy.get_param("/kp",0.0)
-kd = rospy.get_param("/kd",1.0)
-ki = rospy.get_param("/ki",0.5)
+kp = rospy.get_param("/kp",0.0095)
+kd = rospy.get_param("/kd",0.0)
+ki = rospy.get_param("/ki",0.05)
 
 #global set_point_nuevo, set_point_tiempo, status_nuevo, output_nuevo, output_time_nuevo, cons_int , dt
-global set_point_nuevo, set_point_tiempo, status_nuevo, output_nuevo, output_time_nuevo,cons_int , dt
+global set_point_nuevo, set_point_tiempo, status_nuevo, output_nuevo, output_time_nuevo,cons_int, dt
 
 
-set_point_nuevo = 0
-set_point_tiempo = 0
-status_nuevo = 0
-output_nuevo = 0
-output_time_nuevo = 0
-error = 0
-error_previo = 0
+set_point_nuevo = 0.0
+set_point_tiempo = 0.0
+status_nuevo = 0.0
+output_nuevo = 0.0
+output_time_nuevo = 0.0
+error = 0.0
+error_previo = 0.0
+Error_int = 0.0
+last_time = 0.0
 
 cons_int = 0.01
 dt = 0.01
 
+control_msg = motor_input()
+control_msg.input = 0
+control_msg.time = 0
+
+angularVelocity = motor_output()
+setPoint = set_point()
+
+
 def callback_output(msg):
-    status_nuevo = msg.status
-    output_nuevo = msg.output
-    output_time_nuevo = msg.time
+    global angularVelocity
+    angularVelocity = msg
 
 def callback_input(msg):
-    set_point_nuevo = msg.input
-    set_point_tiempo_nuevo = msg.time
+    global setPoint
+    setPoint = msg
 
 #Stop Condition
 def stop():
@@ -52,20 +63,24 @@ if __name__=='__main__':
     rate = rospy.Rate(100)
 
     control_pub = rospy.Publisher("/motor_input", motor_input, queue_size=1)
-    control_msg = motor_input()
+    #control_msg = motor_input()
     print("The Controller is Running")
     #Run the node
+
+
+
     while not rospy.is_shutdown():
 
-        error = set_point_nuevo - output_nuevo
+        error = setPoint.input - angularVelocity.output
 
         derivative = kd * (error - error_previo) / dt
 
         proportional = kp * error
+        Error_int += (error) * dt
 
         integral =  ki * (cons_int + error * dt)
         # Salidad del sistema PID
-        Respuesta_PID = derivative + proportional + integral
+        Respuesta_PID =  derivative + proportional + ki*Error_int
 
         error_previo = error
 

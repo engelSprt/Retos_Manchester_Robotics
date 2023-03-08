@@ -24,16 +24,17 @@ if __name__=='__main__':
 
     print("The Set Point Generator is Running")
 
-    input = rospy.get_param("/input",20)
-
+    Amplitud = rospy.get_param("/setPoint_Amplitude",8.0)
+    Omega = rospy.get_param("/setPoint_freq",0.1)
+    start_time = rospy.get_time()
+    ini_input = set_point()
     #Run the node
     while not rospy.is_shutdown():
-
-        ini_input = set_point()
-        ini_tiempo = rospy.get_time()
-
-        ini_input.input = input
-        ini_input.time = rospy.get_time()
+        time = 0
+        time = rospy.get_time()-start_time
+        signal = Amplitud*np.sin(Omega*time)
+        ini_input.time = time
+        ini_input.input = signal
 
         signal_pub.publish(ini_input)
 

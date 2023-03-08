@@ -1,2 +1,4 @@
-input : 7.0
-time : 0.0
+#input : 8.0
+#time : 0.0
+setPoint_Amplitude : 8.0
+setPoint_freq : 0.1
