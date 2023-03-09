@@ -46,7 +46,7 @@ microcontrolador (arduino) y un controlador de motor (puente h - motor driver).
 ## Introducción
 
 <p align="center">
-  <img src=" " />
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%203/images/Mapa%20Mental%20Ideas%20Corporativo%20rosa%20y%20Naranja.png" />
 </p>
 
 ## Solución del problema
