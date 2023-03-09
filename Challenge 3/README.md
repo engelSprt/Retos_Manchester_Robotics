@@ -51,11 +51,9 @@ microcontrolador (arduino) y un controlador de motor (puente h - motor driver).
 
 ## Solución del problema
 
-Para la solución de este reto se cuenta con un archivo codificado en lenguaje arduino, llamado: .ino.
+Para la solución de este reto se cuenta con un archivo codificado en lenguaje arduino, llamado: PWM.ino.
 
-A continuación se describe la funcionalidad:
-
-### .ino
+### PWM.ino
 
 `````c
 
