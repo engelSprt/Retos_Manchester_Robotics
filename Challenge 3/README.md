@@ -55,6 +55,9 @@ Para la solución de este reto se cuenta con un archivo codificado en lenguaje a
 
 ### PWM.ino
 
+Antes de nuestro setup, declaramos los pines a utlizar para  controlar el giro de nuestro motor y activar el puente H. Asi mismo creamos dos variables que almacenaran tanto la direccion actual como la direccion anterior, para de esta manera saber cuando hubo un cambio de giro. Por creamos una funcion que sera el callback de nuestro suscriptor, en esta funcion se recibe el valor que se encia desde la computadora externa, primero se verifica si hubo un cambio de giro, si esto ocurre se apaga por un pequeño momento el motor para no dañar nuestro puente H, despues se mapea nuestro valor recibido para enviarlo al motor.
+
+
 `````c
 
 #include <ros.h>
@@ -117,7 +120,10 @@ std_msgs::Float32 pwm_value;
 
 ros::Subscriber<std_msgs::Float32> motor("cmd_pwm", pwm_int);  
 
+`````
+Se inicializa nuestro nodo y nuestro suscriptor, y declaramos nuestros pines como salidas
 
+`````c
 
 void setup()
 {
@@ -133,6 +139,10 @@ void setup()
 
 
 }
+
+`````
+
+`````c
 
 void loop()
 {
