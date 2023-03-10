@@ -51,7 +51,7 @@ microcontrolador (arduino) y un controlador de motor (puente h - motor driver).
 
 ## Solución del problema
 
-Para la solución de este reto se cuenta con un archivo codificado en lenguaje arduino, llamado: PWM.ino.
+Para la solución de este reto se cuenta con un archivo codificado en lenguaje arduino, llamado: PWM.ino, El cual es nuestro nodo "/motor" encargado de recibir un valor entre -1 y 1, y traducirlo en el pwm y direccion, para posteriormente enviar esta informacion a nuestro motor.
 
 ### PWM.ino
 
@@ -60,26 +60,27 @@ Para la solución de este reto se cuenta con un archivo codificado en lenguaje a
 #include <ros.h>
 #include <std_msgs/Float32.h>
 
-// These constants won't change. They're used to give names to the pins used:
-//const int variador = A0;  // Analog input pin that the potentiometer is attached to
+                                            //pines a utlizar
 const int In1 = 2; // Analog output pin 
 const int In2 = 3; // Analog output pin 
 const int EnA = 9; // Activar o desactivar Puente H
 
-char dir, last_dir='r';
+                                            //variables de direccion actual y direccion anterior
 
+char dir, last_dir='r';
+                                            //Funcion que publica el pwm y la direccion                                            
 void pwm_int(const std_msgs::Float32 msg) {
 
   float val_recived = msg.data;
   
-
+                                            //verificamos si hubo un cambio de direccion
   if(val_recived > 0){
     dir = 'r';
     }
   else{
     dir = 'l';
     }
-
+                                            //Si hubo cambio de direccion apagamos por 100ms el motor
   if(dir =! last_dir){
     digitalWrite(In1, LOW);
     digitalWrite(In2, LOW);
@@ -89,7 +90,7 @@ void pwm_int(const std_msgs::Float32 msg) {
   last_dir = dir;
 
   
-  
+                                              //mapeamos el valor recibido 
   
   int pwm = val_recived*255;
   
@@ -108,7 +109,7 @@ void pwm_int(const std_msgs::Float32 msg) {
   
 }
 
-
+                                            //creamos nuestro suscriptor al topico "cmd_pwm"
 
 ros::NodeHandle  nh;
 
@@ -121,6 +122,7 @@ ros::Subscriber<std_msgs::Float32> motor("cmd_pwm", pwm_int);
 void setup()
 {
 
+                                            //iniciamos nuesto nodo y activamos nuestro pines como salida
   nh.initNode();
   nh.subscribe(motor);
 
