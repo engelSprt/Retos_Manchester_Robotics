@@ -390,10 +390,19 @@ if __name__=='__main__':
 ## Resultados
 
 **<p align="center"> Representación de cada uno de los nodos y tópicos utilizando el comando rqt_graph</p>**
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%202/images/Graph_controller2.png" />
+</p>
 
 **<p align="center"> Graficación de la respuesta del sistema con el controlador junto al set_point utilizando el comando de rqt_plot</p>**
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%202/images/Respuesta_controllador2.png" />
+</p>
 
-**<p align="center"> Datos mostrados en la consola</p>**
+**<p align="center"> Datos mostrados en la consola para el error</p>**
+<p align="center">
+  <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%202/images/Consola2.png" />
+</p>
 
 ## Conclusiones
 
