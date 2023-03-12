@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>  
+	<rosparam file = "$(find nombre_paquete)/config/params.yaml" command = "load" />
+        <node name="pwm_input" pkg="pwm_motor" type="pwm_input.py" output="screen" launch-prefix="gnome-terminal --command" />
+        
+</launch>

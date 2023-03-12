@@ -1,0 +1,339 @@
+Script iniciado en 2023-03-10 13:18:18-0600
+]0;engel@UnknownDevice: ~/catkin_ws/src/pwm_motor[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src/pwm_motor[00m$ sudo chmod 666 /dev/ttyACM0reboot[Kchmod 666 /dev/ttyACM*[9Phistory | grep 666sudo chmod 666 /dev/ttyACM*reboot[Kchmod 666 /dev/ttyACM0[Kcd scripts/
+]0;engel@UnknownDevice: ~/catkin_ws/src/pwm_motor/scripts[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src/pwm_motor/scripts[00m$ ls
+[0m[01;32mpwm_input.py[0m
+]0;engel@UnknownDevice: ~/catkin_ws/src/pwm_motor/scripts[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src/pwm_motor/scripts[00m$ code pwm_input.py m[K
+]0;engel@UnknownDevice: ~/catkin_ws/src/pwm_motor/scripts[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src/pwm_motor/scripts[00m$ cd 
+]0;engel@UnknownDevice: ~[01;32mengel@UnknownDevice[00m:[01;34m~[00m$ 
+]0;engel@UnknownDevice: ~[01;32mengel@UnknownDevice[00m:[01;34m~[00m$ cd ..
+]0;engel@UnknownDevice: /home[01;32mengel@UnknownDevice[00m:[01;34m/home[00m$ ls
+[0m[01;34mengel[0m
+]0;engel@UnknownDevice: /home[01;32mengel@UnknownDevice[00m:[01;34m/home[00m$ cd cat[K[K[K[K[K[Kcd 
+]0;engel@UnknownDevice: ~[01;32mengel@UnknownDevice[00m:[01;34m~[00m$ ls[K[Kcd catkin_ws/
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ ls
+[0m[01;34mbuild[0m  [01;34mdevel[0m  [01;34msrc[0m
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ cd src/
+]0;engel@UnknownDevice: ~/catkin_ws/src[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src[00m$ ls
+[0m[01;34mbasic_comms[0m  [01;36mCMakeLists.txt[0m  [01;34mcourseworks[0m  [01;34mmotor_control[0m  [01;34mpid_control[0m  [01;34mpwm_motor[0m
+]0;engel@UnknownDevice: ~/catkin_ws/src[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src[00m$ cd pwm_motor/
+]0;engel@UnknownDevice: ~/catkin_ws/src/pwm_motor[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src/pwm_motor[00m$ ls
+CMakeLists.txt  package.xml  [0m[01;34mscripts[0m  [01;34msrc[0m  typescript
+]0;engel@UnknownDevice: ~/catkin_ws/src/pwm_motor[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src/pwm_motor[00m$ cd s
+scripts/ src/     
+]0;engel@UnknownDevice: ~/catkin_ws/src/pwm_motor[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src/pwm_motor[00m$ cd s[K[K[K[Kcd ..
+]0;engel@UnknownDevice: ~/catkin_ws/src[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src[00m$ ls
+[0m[01;34mbasic_comms[0m  [01;36mCMakeLists.txt[0m  [01;34mcourseworks[0m  [01;34mmotor_control[0m  [01;34mpid_control[0m  [01;34mpwm_motor[0m
+]0;engel@UnknownDevice: ~/catkin_ws/src[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws/src[00m$ cd ..
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ ls
+[0m[01;34mbuild[0m  [01;34mdevel[0m  [01;34msrc[0m
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ catkin_make
+Base path: /home/engel/catkin_ws
+Source space: /home/engel/catkin_ws/src
+Build space: /home/engel/catkin_ws/build
+Devel space: /home/engel/catkin_ws/devel
+Install space: /home/engel/catkin_ws/install
+[34m####[0m
+[34m#### Running command: [1m"make cmake_check_build_system"[0m[34m in [1m"/home/engel/catkin_ws/build"[0m
+[34m####[0m
+-- Using CATKIN_DEVEL_PREFIX: /home/engel/catkin_ws/devel
+[0m-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic
+[0m-- This workspace overlays: /opt/ros/melodic
+[0m-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+[0m-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+[0m-- Using Debian Python package layout
+[0m-- Using empy: /usr/bin/empy
+[0m-- Using CATKIN_ENABLE_TESTING: ON
+[0m-- Call enable_testing()
+[0m-- Using CATKIN_TEST_RESULTS_DIR: /home/engel/catkin_ws/build/test_results
+[0m-- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0m-- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0m-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+[0m-- Using Python nosetests: /usr/bin/nosetests-2.7
+[0m-- catkin 0.7.29
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [35m~~ [0m traversing 5 packages in topological order:
+[0m-- [35m~~ [0m - [1m[34mbasic_comms
+[0m-- [35m~~ [0m - [1m[34mcourseworks
+[0m-- [35m~~ [0m - [1m[34mmotor_control
+[0m-- [35m~~ [0m - [1m[34mpid_control
+[0m-- [35m~~ [0m - [1m[34mpwm_motor
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mbasic_comms[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(basic_comms)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- basic_comms: 1 messages, 0 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mcourseworks[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(courseworks)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mmotor_control[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(motor_control)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mpid_control[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(pid_control)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- pid_control: 3 messages, 0 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mpwm_motor[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(pwm_motor)
+[0m-- Configuring done
+[0m-- Generating done
+[0m-- Build files have been written to: /home/engel/catkin_ws/build
+[0m[34m####[0m
+[34m#### Running command: [1m"make -j4 -l4"[0m[34m in [1m"/home/engel/catkin_ws/build"[0m
+[34m####[0m
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target _basic_comms_generate_messages_check_deps_signal_msg
+[  8%] Built target basic_comms_generate_messages_py
+[  8%] Built target _pid_control_generate_messages_check_deps_set_point
+[ 12%] Built target basic_comms_generate_messages_cpp
+[ 16%] Built target basic_comms_generate_messages_nodejs
+[ 16%] Built target _pid_control_generate_messages_check_deps_motor_output
+[ 16%] Built target _pid_control_generate_messages_check_deps_motor_input
+[ 25%] Built target basic_comms_generate_messages_eus
+[ 29%] Built target basic_comms_generate_messages_lisp
+[ 41%] Built target pid_control_generate_messages_cpp
+[ 58%] Built target pid_control_generate_messages_py
+[ 75%] Built target pid_control_generate_messages_eus
+[ 87%] Built target pid_control_generate_messages_lisp
+[100%] Built target pid_control_generate_messages_nodejs
+[100%] Built target basic_comms_generate_messages
+[100%] Built target pid_control_generate_messages
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ ls
+[0m[01;34mbuild[0m  [01;34mdevel[0m  [01;34msrc[0m
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ lscatkin_make
+Base path: /home/engel/catkin_ws
+Source space: /home/engel/catkin_ws/src
+Build space: /home/engel/catkin_ws/build
+Devel space: /home/engel/catkin_ws/devel
+Install space: /home/engel/catkin_ws/install
+[34m####[0m
+[34m#### Running command: [1m"make cmake_check_build_system"[0m[34m in [1m"/home/engel/catkin_ws/build"[0m
+[34m####[0m
+[34m####[0m
+[34m#### Running command: [1m"make -j4 -l4"[0m[34m in [1m"/home/engel/catkin_ws/build"[0m
+[34m####[0m
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target _basic_comms_generate_messages_check_deps_signal_msg
+[  0%] Built target _pid_control_generate_messages_check_deps_set_point
+[  8%] Built target basic_comms_generate_messages_py
+[ 12%] Built target basic_comms_generate_messages_nodejs
+[ 16%] Built target basic_comms_generate_messages_cpp
+[ 16%] Built target _pid_control_generate_messages_check_deps_motor_input
+[ 16%] Built target _pid_control_generate_messages_check_deps_motor_output
+[ 20%] Built target basic_comms_generate_messages_lisp
+[ 29%] Built target basic_comms_generate_messages_eus
+[ 45%] Built target pid_control_generate_messages_py
+[ 58%] Built target pid_control_generate_messages_cpp
+[ 75%] Built target pid_control_generate_messages_eus
+[ 87%] Built target pid_control_generate_messages_lisp
+[100%] Built target pid_control_generate_messages_nodejs
+[100%] Built target basic_comms_generate_messages
+[100%] Built target pid_control_generate_messages
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ source_devel
+source_devel: orden no encontrada
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ source_devel[K[K[K[K[K[K devel/setup.bash
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ ls
+[0m[01;34mbuild[0m  [01;34mdevel[0m  [01;34msrc[0m
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ car[K[K[Krosrun pwm_motor pw[K]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ rosrun pwm_motor pwm.[K.[K:input[K[K[K[K[K[K:[K_inp[Kput.py
+[31m[ERROR] [1678479080.919614]: Unable to immediately register with master node [http://localhost:11311]: master may not be running yet. Will keep trying.
+[0m^CTraceback (most recent call last):
+  File "/home/engel/catkin_ws/src/pwm_motor/scripts/pwm_input.py", line 119, in <module>
+    rospy.init_node("pwm_input")
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/client.py", line 323, in init_node
+    raise rospy.exceptions.ROSInitException("init_node interrupted before it could complete")
+rospy.exceptions.ROSInitException: init_node interrupted before it could complete
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ roscore
+... logging to /home/engel/.ros/log/c2106d28-bf7f-11ed-89b2-1cbfc04e89c9/roslaunch-UnknownDevice-7302.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;roscore
+[1mstarted roslaunch server http://UnknownDevice:35747/[0m
+ros_comm version 1.14.13
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [7316][0m
+[1mROS_MASTER_URI=http://UnknownDevice:11311/[0m
+]2;roscore http://UnknownDevice:11311/
+[1msetting /run_id to c2106d28-bf7f-11ed-89b2-1cbfc04e89c9[0m
+[1mprocess[rosout-1]: started with pid [7332][0m
+started core service [/rosout]
+^C[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ roscorerun pwm_motor pwm_input.pyls[Ksource devel/setup.bash[11P_devel[1Pcatkin_make
+Base path: /home/engel/catkin_ws
+Source space: /home/engel/catkin_ws/src
+Build space: /home/engel/catkin_ws/build
+Devel space: /home/engel/catkin_ws/devel
+Install space: /home/engel/catkin_ws/install
+[34m####[0m
+[34m#### Running command: [1m"make cmake_check_build_system"[0m[34m in [1m"/home/engel/catkin_ws/build"[0m
+[34m####[0m
+-- Using CATKIN_DEVEL_PREFIX: /home/engel/catkin_ws/devel
+[0m-- Using CMAKE_PREFIX_PATH: /home/engel/catkin_ws/devel;/opt/ros/melodic
+[0m-- This workspace overlays: /home/engel/catkin_ws/devel;/opt/ros/melodic
+[0m-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+[0m-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+[0m-- Using Debian Python package layout
+[0m-- Using empy: /usr/bin/empy
+[0m-- Using CATKIN_ENABLE_TESTING: ON
+[0m-- Call enable_testing()
+[0m-- Using CATKIN_TEST_RESULTS_DIR: /home/engel/catkin_ws/build/test_results
+[0m-- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0m-- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0m-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+[0m-- Using Python nosetests: /usr/bin/nosetests-2.7
+[0m-- catkin 0.7.29
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [35m~~ [0m traversing 5 packages in topological order:
+[0m-- [35m~~ [0m - [1m[34mbasic_comms
+[0m-- [35m~~ [0m - [1m[34mcourseworks
+[0m-- [35m~~ [0m - [1m[34mmotor_control
+[0m-- [35m~~ [0m - [1m[34mpid_control
+[0m-- [35m~~ [0m - [1m[34mpwm_motor
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mbasic_comms[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(basic_comms)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- basic_comms: 1 messages, 0 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mcourseworks[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(courseworks)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mmotor_control[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(motor_control)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mpid_control[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(pid_control)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- pid_control: 3 messages, 0 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mpwm_motor[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(pwm_motor)
+[0m-- Configuring done
+[0m-- Generating done
+[0m-- Build files have been written to: /home/engel/catkin_ws/build
+[0m[34m####[0m
+[34m#### Running command: [1m"make -j4 -l4"[0m[34m in [1m"/home/engel/catkin_ws/build"[0m
+[34m####[0m
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target _basic_comms_generate_messages_check_deps_signal_msg
+[  8%] Built target basic_comms_generate_messages_py
+[  8%] Built target _pid_control_generate_messages_check_deps_set_point
+[  8%] Built target _pid_control_generate_messages_check_deps_motor_input
+[ 12%] Built target basic_comms_generate_messages_cpp
+[ 16%] Built target basic_comms_generate_messages_nodejs
+[ 16%] Built target _pid_control_generate_messages_check_deps_motor_output
+[ 25%] Built target basic_comms_generate_messages_eus
+[ 29%] Built target basic_comms_generate_messages_lisp
+[ 58%] Built target pid_control_generate_messages_cpp
+[ 58%] Built target pid_control_generate_messages_py
+[ 75%] Built target pid_control_generate_messages_eus
+[ 87%] Built target pid_control_generate_messages_lisp
+[100%] Built target pid_control_generate_messages_nodejs
+[100%] Built target basic_comms_generate_messages
+[100%] Built target pid_control_generate_messages
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ catkin_make[4Proscorerun pwm_motor pwm_input.pyls[Ksource devel/setup.bash
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ source devel/setup.bash[12Pcatkin_make[4Proscorerun pwm_motor pwm_input.pycore[K
+... logging to /home/engel/.ros/log/15eea73c-bf82-11ed-89b2-1cbfc04e89c9/roslaunch-UnknownDevice-8381.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;roscore
+[1mstarted roslaunch server http://UnknownDevice:33833/[0m
+ros_comm version 1.14.13
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.13
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [8394][0m
+[1mROS_MASTER_URI=http://UnknownDevice:11311/[0m
+]2;roscore http://UnknownDevice:11311/
+[1msetting /run_id to 15eea73c-bf82-11ed-89b2-1cbfc04e89c9[0m
+[1mprocess[rosout-1]: started with pid [8408][0m
+started core service [/rosout]
+^C[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+]0;engel@UnknownDevice: ~/catkin_ws[01;32mengel@UnknownDevice[00m:[01;34m~/catkin_ws[00m$ roscoresource devel/setup.bash[12Pcatkin_make[4Proscorecatkin_make
+Base path: /home/engel/catkin_ws
+Source space: /home/engel/catkin_ws/src
+Build space: /home/engel/catkin_ws/build
+Devel space: /home/engel/catkin_ws/devel
+Install space: /home/engel/catkin_ws/install
+[34m####[0m
+[34m#### Running command: [1m"make cmake_check_build_system"[0m[34m in [1m"/home/engel/catkin_ws/build"[0m
+[34m####[0m
+-- Using CATKIN_DEVEL_PREFIX: /home/engel/catkin_ws/devel
+[0m-- Using CMAKE_PREFIX_PATH: /home/engel/catkin_ws/devel;/opt/ros/melodic
+[0m-- This workspace overlays: /home/engel/catkin_ws/devel;/opt/ros/melodic
+[0m-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+[0m-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+[0m-- Using Debian Python package layout
+[0m-- Using empy: /usr/bin/empy
+[0m-- Using CATKIN_ENABLE_TESTING: ON
+[0m-- Call enable_testing()
+[0m-- Using CATKIN_TEST_RESULTS_DIR: /home/engel/catkin_ws/build/test_results
+[0m-- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0m-- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0m-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+[0m-- Using Python nosetests: /usr/bin/nosetests-2.7
+[0m-- catkin 0.7.29
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [35m~~ [0m traversing 5 packages in topological order:
+[0m-- [35m~~ [0m - [1m[34mbasic_comms
+[0m-- [35m~~ [0m - [1m[34mcourseworks
+[0m-- [35m~~ [0m - [1m[34mmotor_control
+[0m-- [35m~~ [0m - [1m[34mpid_control
+[0m-- [35m~~ [0m - [1m[34mpwm_motor
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mbasic_comms[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(basic_comms)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- basic_comms: 1 messages, 0 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mcourseworks[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(courseworks)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mmotor_control[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(motor_control)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mpid_control[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(pid_control)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- pid_control: 3 messages, 0 services
+[0m-- [1m[32m+++[0m p
