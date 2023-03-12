@@ -59,6 +59,8 @@ ejecutar todos los nodos. Se comenzará por describir la funcionalidad de cada u
 
 ### System.py
 
+Este archivo contiene la simulación de un motor de Corriente directa con encoder, dicho sistema responde a cualquier señal y es el responsable de que se tenga que aplicar un controlador, dicho sistema es uno de primer orden.
+
 `````python
 #!/usr/bin/env python
 import rospy
@@ -196,6 +198,12 @@ if __name__=='__main__':
 
 ### Controller.py
 
+Este archivo contiene el controlador programado en código Python, dicho controlador es un PID y a continuación se describe el cómo fue posible ajustar cada una de las constantes y el código comentado:
+
+la metodología empleada para encontrar las constantes del PID fue mendiante el ajuste manual, que es un proceso iterativo que consiste en ajustar manualmente las constantes del controlador hasta lograr un rendimiento óptimo del sistema. El proceso comienza ajustando la ganancia proporcional (Kp) del controlador. Se aumenta gradualmente Kp hasta que se observa una respuesta del sistema, y se observa si esta respuesta se acerca a la respuesta deseada. Si la respuesta no es la esperada, se ajusta Kp de nuevo, y se sigue probando hasta obtener una respuesta satisfactoria. A continuación, se ajusta la ganancia integral (Ki) del controlador. Si el sistema no está respondiendo de manera adecuada, se aumenta o disminuye el valor de Ki hasta obtener una respuesta satisfactoria. El proceso se repite para la ganancia derivativa (Kd), si es necesario.
+
+El ajuste manual es un método laborioso y requiere de mucha experiencia y conocimientos técnicos. Aunque puede proporcionar un rendimiento óptimo en algunos casos, se recomienda utilizar los métodos automatizados de ajuste de controladores PID cuando sea posible, para garantizar la precisión y eficiencia del proceso.
+
 `````python
 #!/usr/bin/env python
 import rospy
@@ -304,6 +312,9 @@ if __name__=='__main__':
 
 ### Set_point.py
 
+Para el archivo de "Set_point" programado en python recibimos mensajes customizados y parámetros tanto para generar la señal como para publicarla, dichos parámetros son la frecuencia de la senoidal y la amplitud. Es así que la señal senoidal será enviada al controlador para que este próximamente pueda enviarlo al sistema y ejecutar las funciones correspondientes.
+
+
 `````python
 #!/usr/bin/env python
 
@@ -393,16 +404,19 @@ if __name__=='__main__':
 <p align="center">
   <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%202/images/Graph_controller2.png" />
 </p>
+Podemos observar que la conexión entre tópicos y nodos es la correcta.
 
 **<p align="center"> Graficación de la respuesta del sistema con el controlador junto al set_point utilizando el comando de rqt_plot</p>**
 <p align="center">
   <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%202/images/Respuesta_controllador2.png" />
 </p>
+Se concluye observando esta imágen que el controlador cumple su función al corregir la salida del sistema para minimizar las oscilaciones y el ruido presentado por el sistema.
 
 **<p align="center"> Datos mostrados en la consola para el error</p>**
 <p align="center">
   <img src="https://github.com/engelSprt/Retos_Manchester_Robotics/blob/main/Challenge%202/images/Consola2.png" />
 </p>
+Podemos observar un error bastante aceptable, por lo que se puede decir que el controlador está implementado de una forma correcta.
 
 ## Conclusiones
 
