@@ -156,6 +156,87 @@ void loop()
 
 `````
 
+### pwm_input.py
+Como extension a este reto, se agrego un nodo en python, el cual contiene 4 funciones que representan 4 señales, senoidal, escalon unitario, cuadrada y diente de sierra, cualquiera de estas señales puede ser enviada al topico "cmd_input", mismo al cual esta suscrito el nodo del arduino y del cual recibe el valor entre -1 y 1 para posteriormente convertirlo en direccion y pwm. La señal que se dese enviar al topico mencionado anteriormente, debe ser elegida mediante la linea de comandos con _rosparam set_ 
+`````python
+
+#!/usr/bin/env python
+import rospy
+import numpy as np
+from std_msgs.msg import Float32, String
+
+
+def sine():
+
+    time = rospy.get_time()
+    y = np.sin(time)
+    y = round(y, 1)
+    
+    return y
+
+
+def square():
+    
+    
+    time = rospy.get_time()
+    y = np.sin(time)
+    y = np.sign(y)
+    
+    return y 
+
+
+            
+def step():
+    y = 0
+    time = rospy.get_time()
+    if (time >0):
+        y = 1
+        
+    return y
+
+def sawtooth():
+    
+    t = rospy.get_time()
+    period = 2.0  # segundos
+    amplitude = 1.0
+    slope = amplitude / period
+    y = (t % period) * slope
+    
+    return y
+
+
+
+if __name__=='__main__':
+    pub=rospy.Publisher("cmd_pwm",Float32, queue_size=10)
+    rospy.init_node("pwm_input")
+    rate = rospy.Rate(10)
+    
+    while not rospy.is_shutdown():
+        senal = rospy.get_param("/senal", "Parameter not found")
+     
+        y = 0
+        
+        if senal == "seno":
+            y = sine()
+        elif senal == "cuadrada":
+            y = square()
+        elif senal == "escalon":
+            y =  step()
+        elif senal == "sierra":
+            y = sawtooth()
+        
+        rospy.loginfo(y)
+        pub.publish(y)
+        
+        
+
+        rate.sleep()
+        
+
+
+`````
+
+
 ## Resultados  
 
 **<p align="center"> Video de demostración con la explicación de la ejecución</p>**
