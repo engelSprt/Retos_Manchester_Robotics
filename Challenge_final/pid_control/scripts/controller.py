@@ -32,7 +32,7 @@ cons_int = 0.01
 
 #Creamos variables de tipo motor_input y motor_output, esto con el fin de utilizarlas para
 #almacenar datos dentro de las funciones callback
-control_msg = 0.0
+#control_msg = 0.0
 angularVelocity = 0.0
 out = 0.0
 setPoint = set_point()
