@@ -11,59 +11,64 @@ ini_input.entrada = 0.0
 
 #Define variables to be used
 first = True
-#start_time = 0.0
+start_time = 0.0
 signal = 0.0
-time = 0.0
+#global time = 0.0
 
-def sine(amplitude, frequency):
-    global time = rospy.get_time()
-    y = amplitude * np.sin(2*np.pi*frequency*time)
-    y = round(y, 1)
+def sine(amplitude, frequency, time):
+    #global time = rospy.get_time()
+    y = amplitude * np.sin(frequency*time)
+    #y = round(y, 1)
     return y
 
-def square(amplitude, frequency):
-    global time = rospy.get_time()
-    y = amplitude * np.sign(np.sin(2*np.pi*frequency*time))
+def square(amplitude, frequency, time):
+    #global time = rospy.get_time()
+    y = amplitude * np.sign(np.sin(frequency*time))
+    #y = round(y, 1)
     return y
 
-def step():
+def step(time):
     y = 0
-    global time = rospy.get_time()
+    #global time = rospy.get_time()
     if (time > 0):
         y = 1
     return y
 
-def sawtooth(amplitude, frequency):
-    global time = rospy.get_time()
+def sawtooth(amplitude, frequency, time):
+    #global time = rospy.get_time()
     period = 1/frequency
     slope = amplitude / period
     y = (time % period) * slope
+    #y = round(y, 1)
     return y
 
 if __name__=='__main__':
-    pub = rospy.Publisher("/set_point", set_point, queue_size=1)
     rospy.init_node("Input")
-    rate = rospy.Rate(10)
+    pub = rospy.Publisher("/set_point", set_point, queue_size=10) 
+    #pub = rospy.Publisher("/motor_input", set_point, queue_size=1)
+    rate = rospy.Rate(100)
 
     print("The Input Generator is Running")
-
+    #start_time = rospy.get_time()
+    y = 0
+    
     while not rospy.is_shutdown():
-        senal = rospy.get_param("/senal", "Parameter not found")
-        amplitude = rospy.get_param("/amplitude", 1.0)
+        senal = rospy.get_param("/senal","seno")
+        amplitude = rospy.get_param("/amplitude", 0.5)
         frequency = rospy.get_param("/frequency", 1.0)
 
-        y = 0
+        time =rospy.get_time()#-start_time
         if senal == "seno":
-            y = sine(amplitude, frequency)
+            y = sine(amplitude, frequency, time)
         elif senal == "cuadrada":
-            y = square(amplitude, frequency)
+            y = square(amplitude, frequency, time)
         elif senal == "escalon":
-            y = step(amplitude, frequency)
+            y = step(time)
         elif senal == "sierra":
-            y = sawtooth(amplitude, frequency)
-
+            y = sawtooth(amplitude, frequency, time)
+        
+        y = round(y,2)
         rospy.loginfo(y)
-
         ini_input.entrada = y
         ini_input.time = time
 
